@@ -31,34 +31,29 @@ const SignUpIn = () => {
   const handleSignIn = async (_email: string, _password: string) => {
     setIsFullyLoaded(false)
     backendSignIn_v2(_email, _password).then(rstFB => {
-      if (typeof rstFB === 'string' || rstFB instanceof String){
-        console.log('to-do: use rstFB to update error message')
-        setError(rstFB)
-        setIsFullyLoaded(true)
-      } else {
-        console.log('to-do: use rstFB to update User Object')
-        console.log('to-do: use true to update setSuccSignUp()')
-        router.replace('/')
-        setIsFullyLoaded(true)
-      }
+      handleSignInUpThen(rstFB);
     })
   }
 
   const handleSignUp = async (_email: string, _password: string) => {
     setIsFullyLoaded(false)
     backendSignUp_v2(_email, _password).then(rstFB => {
-      if (typeof rstFB === 'string' || rstFB instanceof String){
-        console.log('to-do: use rstFB to update error message')
-        setError(rstFB)
-        setIsFullyLoaded(true)
-      } else {
-        console.log('to-do: use rstFB to update User Object')
-        console.log('to-do: use true to update setSuccSignUp()')
-        router.replace('/')
-        setIsFullyLoaded(true)
-      }
+      handleSignInUpThen(rstFB);
     })
   }
+
+  const handleSignInUpThen = (rstFB: string|User) => {
+    if (typeof rstFB === 'string'){
+      console.log('to-do: use rstFB to update error message')
+      setError(rstFB)
+      setIsFullyLoaded(true)
+    } else {
+      console.log('to-do: use rstFB to update User Object')
+      console.log('to-do: use true to update setSuccSignUp()')
+      router.replace('/')
+      setIsFullyLoaded(true)
+    }
+  };
 
   const initialValues = { uid: "", pwd: "" };
 

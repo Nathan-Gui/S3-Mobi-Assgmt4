@@ -4,7 +4,7 @@
 import { signOut } from "firebase/auth"
 import { useRouter, usePathname } from "expo-router"
 import { useAuthState } from "react-firebase-hooks/auth"
-import {auth} from '../firebase/config'
+import {auth} from '@/firebase/config'
 
 import { StyleSheet, TouchableOpacity } from 'react-native';
 // import { Collapsible } from '@/components/Collapsible';
@@ -21,7 +21,7 @@ const LogOutButton = () => {
     signOut(auth).then(
       () => {
         sessionStorage.removeItem('user')
-        router.push('/signin/page')
+        router.push('/')
       }
     ).catch((err)=>{console.error('Error Signing Out', err)})
   };
