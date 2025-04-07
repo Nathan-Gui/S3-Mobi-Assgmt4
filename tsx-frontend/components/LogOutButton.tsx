@@ -2,7 +2,7 @@
 
 // import Link from "next/link"
 import { signOut } from "firebase/auth"
-import { useRouter, usePathname } from "expo-router"
+import { useRouter } from "expo-router"
 import { useAuthState } from "react-firebase-hooks/auth"
 import {auth} from '@/firebase/config'
 
@@ -26,7 +26,6 @@ const LogOutButton = () => {
     ).catch((err)=>{console.error('Error Signing Out', err)})
   };
 
-  const pathname = usePathname();
   return (
     <>
       {user && ( 

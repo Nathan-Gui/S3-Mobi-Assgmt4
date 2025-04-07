@@ -1,4 +1,4 @@
-import { Platform, StyleSheet, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
+import { ScrollView, TouchableOpacity } from 'react-native';
 
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -10,7 +10,7 @@ export default function AsgmtInstr() {
 
   const router = useRouter()
 
-  const handelSignout = () => {
+  const handelSignOut = () => {
     backendSignOut_v2().then(rstFB => {
       if (!rstFB){
         console.log('instruction: signout button: fatal failure, Fin')
@@ -76,12 +76,8 @@ export default function AsgmtInstr() {
         </ThemedView>
       </ThemedView>
     </ScrollView>
-    <TouchableOpacity style={GlobalStyle.LogOutButton} onPress={handelSignout}><ThemedText type="defaultSemiBoldWhite">Sign Out</ThemedText></TouchableOpacity>
+    <TouchableOpacity style={GlobalStyle.LogOutButton} onPress={handelSignOut}><ThemedText type="defaultSemiBoldWhite">Sign Out</ThemedText></TouchableOpacity>
     
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  
-});

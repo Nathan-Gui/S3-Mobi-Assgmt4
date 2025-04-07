@@ -25,7 +25,9 @@ const userSchema = new Schema({
 // 3. Create a Model.
 export const User = model<IUser>('User', userSchema);
 
-connect(process.env.MONGO_URI as string)
+connect(process.env.MONGO_URI as string).then(() => {
+  console.log('connected to mongo');
+})
 
 // 4. define test
 // async function test() {

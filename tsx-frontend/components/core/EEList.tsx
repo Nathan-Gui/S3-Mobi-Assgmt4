@@ -78,7 +78,9 @@ export default function EEList() {
   useFocusEffect(
     useCallback(() => {
       console.log("Stack Tab Index screen is focused!");
-      helloWorldGet()
+      helloWorldGet().then(() => {
+        console.log('Done Tab Index screen is focused!');
+      })
       return () => {
         console.log("Stack Tab Index screen lost focus.");
       };

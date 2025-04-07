@@ -1,16 +1,14 @@
-import { StyleSheet, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
+import { StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
-import { doc, collection, addDoc, getDocs, deleteDoc } from "firebase/firestore"; 
-import {db} from "@/firebase/config"
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik} from "formik";
 import * as Yup from 'yup';
 import { useRouter } from 'expo-router';
 import { backendSignOut_v2 } from '@/components/core/User';
 import { GlobalStyle } from '@/components/core/GlobalStyle';
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { ThemedTextInput } from '@/components/ThemedTextInput';
 
 export default function EEAdd() {
@@ -18,7 +16,7 @@ export default function EEAdd() {
   const router = useRouter()
   const [saveMsg, setSaveMsg] = useState("");
 
-  const handelSignout = () => {
+  const handelSignOut = () => {
     backendSignOut_v2().then(rstFB => {
       if (!rstFB){
         console.log('instruction: signout button: fatal failure, Fin')
@@ -50,24 +48,24 @@ export default function EEAdd() {
     });
   }
 
-  const HelloWorldAdd_old = async (_dataJson: { first: string; last: string; dept: string; sup: string; eeid: string; eml: string; tel: string; }) => {
-    try {
-      const docRef = await addDoc(collection(db, "employee"), _dataJson);
-      if (docRef.id){
-        setSaveMsg("Info Saved!");
-        console.log("Document written with ID: ", docRef.id);
-      } else {
-        setSaveMsg("Error accourred!");
-      }
-    } catch (e) {
-      setSaveMsg("Error accourred!");
-      console.error("Error adding document: ", e);
-    }
-  }
+  // const HelloWorldAdd_old = async (_dataJson: { first: string; last: string; dept: string; sup: string; eeid: string; eml: string; tel: string; }) => {
+  //   try {
+  //     const docRef = await addDoc(collection(db, "employee"), _dataJson);
+  //     if (docRef.id){
+  //       setSaveMsg("Info Saved!");
+  //       console.log("Document written with ID: ", docRef.id);
+  //     } else {
+  //       setSaveMsg("Error accourred!");
+  //     }
+  //   } catch (e) {
+  //     setSaveMsg("Error accourred!");
+  //     console.error("Error adding document: ", e);
+  //   }
+  // }
   
   const initialValues = { first: "", last: "", eeid: "", sup: "", dept: "", eml: "", tel: "" };
 
-  const phoneRegExp = /^([\+]?)([1-9]([0-9]{0,2}?))([ \-]?)([0-9]{3})([ \-]?)([0-9]{3,4})([ \-]?)([0-9]{4})$/
+  const phoneRegExp = /^(([+][1-9][0-9]?[0-9]?)?)(-?)([0-9]{3})(-?)([0-9]{3})(-?)([0-9]{4})$/
   //                  /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/
 
   const StepOneSchema = Yup.object({
@@ -135,7 +133,7 @@ export default function EEAdd() {
         </ThemedView>
         <ThemedView style={GlobalStyle.GroundContainer}></ThemedView>
       </ScrollView>
-      <TouchableOpacity style={GlobalStyle.LogOutButton} onPress={handelSignout}><ThemedText type="defaultSemiBoldWhite">Sign Out</ThemedText></TouchableOpacity>
+      <TouchableOpacity style={GlobalStyle.LogOutButton} onPress={handelSignOut}><ThemedText type="defaultSemiBoldWhite">Sign Out</ThemedText></TouchableOpacity>
     </>
   );
 }

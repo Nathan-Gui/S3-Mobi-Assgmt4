@@ -16,7 +16,7 @@ export const FirestoreAdd = async (_dataJson: { first: string, last: string, dep
 
 export const FirestoreDel = async (id: string) => {
   try {
-    const docRef = await deleteDoc(doc(db, "employee", id));
+    await deleteDoc(doc(db, "employee", id));
     console.log("---> Done deleting: ", id)
     return true;
   } catch (e) {
@@ -27,7 +27,7 @@ export const FirestoreDel = async (id: string) => {
 export const FirestoreUpd = async (id: string, _dataJson: { first?: string, last?: string, dept?: string, sup?: string, eeid?: string, eml?: string, tel?: string, }) => {
   
   try {
-    const res = await updateDoc(doc(db, "employee", id), _dataJson);
+    await updateDoc(doc(db, "employee", id), _dataJson);
     console.log("---> Done updating: ", id)
     return true;
   } catch (e) {
