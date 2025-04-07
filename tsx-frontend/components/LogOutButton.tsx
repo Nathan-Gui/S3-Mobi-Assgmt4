@@ -6,13 +6,13 @@ import { useRouter, usePathname } from "expo-router"
 import { useAuthState } from "react-firebase-hooks/auth"
 import {auth} from '../firebase/config'
 
-import { Image, StyleSheet, Platform, TouchableOpacity } from 'react-native';
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
+import { StyleSheet, TouchableOpacity } from 'react-native';
+// import { Collapsible } from '@/components/Collapsible';
+// import { ExternalLink } from '@/components/ExternalLink';
+// import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-import { IconSymbol } from '@/components/ui/IconSymbol';
+// import { ThemedView } from '@/components/ThemedView';
+// import { IconSymbol } from '@/components/ui/IconSymbol';
 
 const LogOutButton = () => {
   const router = useRouter()

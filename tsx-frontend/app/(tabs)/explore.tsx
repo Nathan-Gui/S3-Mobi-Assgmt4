@@ -1,4 +1,4 @@
-import Shell from '@/components/core/Shell'
+// import Shell from '@/components/core/Shell'
 import EEList from '@/components/core/EEList';
 
 

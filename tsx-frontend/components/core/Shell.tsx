@@ -2,7 +2,7 @@
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/firebase/config"
 import { useState, useEffect, ReactNode } from "react";
-import { Text, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import SignUpIn from '@/components/core/SignUpIn'
@@ -73,8 +73,3 @@ const Shell = ({children}:Props ) => {
 }
 
 export default Shell
-
-
-const styles = StyleSheet.create({
-
-});

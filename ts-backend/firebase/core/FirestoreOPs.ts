@@ -1,6 +1,6 @@
 'use client'
 
-import { doc, collection, addDoc, getDocs, deleteDoc, updateDoc, DocumentData, QuerySnapshot } from "firebase/firestore"; 
+import { doc, collection, addDoc, getDocs, deleteDoc, updateDoc } from "firebase/firestore";
 import {db} from "../config"
 
 export const FirestoreAdd = async (_dataJson: { first: string, last: string, dept: string, sup: string, eeid: string, eml: string, tel: string, }) => {

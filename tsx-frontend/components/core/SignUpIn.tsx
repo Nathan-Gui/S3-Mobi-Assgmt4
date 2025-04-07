@@ -1,12 +1,12 @@
 'use client'
 import { useState } from "react"
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth"
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth"
-import {auth} from "@/firebase/config"
+// import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth"
+// import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth"
+// import {auth} from "@/firebase/config"
 import { useRouter } from "expo-router"
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 
-import { StyleSheet, TouchableOpacity, Text, useColorScheme } from 'react-native';
+import { StyleSheet, TouchableOpacity, useColorScheme } from 'react-native';
 
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -16,7 +16,7 @@ import { backendSignIn_v2, backendSignUp_v2 } from "@/components/core/User"
 import { User } from "firebase/auth"
 import Loading from "@/components/core/Loading";
 import * as Yup from 'yup';
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik } from "formik";
 
 const SignUpIn = () => {
   const colorScheme = useColorScheme();

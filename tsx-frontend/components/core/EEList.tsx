@@ -1,9 +1,9 @@
-import { StyleSheet, Image, Platform, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 
 import { Collapsible } from '@/components/Collapsible';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { useEffect, useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { useRouter } from 'expo-router';
 import { backendSignOut_v2 } from '@/components/core/User';
 import { GlobalStyle } from '@/components/core/GlobalStyle';
@@ -26,12 +26,6 @@ export default function EEList() {
   }
 
   const [EEColl, setEEColl] = useState<{ id?: string, first?: string, last?: string, dept?: string, sup?: string, eeid?: string, eml?: string, tel?: string, }[] | null>(null) // QueryDocumentSnapshot<DocumentData, DocumentData>
-  
-  interface resProp { 
-    status: (arg0: number) => { 
-      json: { (arg0: { status:number ,msg?: string, entries?: { id?: string, first?: string, last?: string, dept?: string, sup?: string, eeid?: string, eml?: string, tel?: string, }[] }): any, },
-    },
-  }
 
   const helloWorldGet = async () => {
     // await getDocs(collection(db, "employee")).then(querySnapshot => {

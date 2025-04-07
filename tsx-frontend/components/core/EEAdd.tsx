@@ -1,4 +1,4 @@
-import { StyleSheet, Image, Platform, View, TextInput, TouchableOpacity, Button, ScrollView, Dimensions } from 'react-native';
+import { StyleSheet, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
 
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -80,8 +80,6 @@ export default function EEAdd() {
     tel:   Yup.string().required('Required').matches(phoneRegExp, 'Invalid Tel'),
   });
 
-  const void_dummy = async () => {}
-
   // helloWorldAdd();
   // helloWorldGet();
   // helloWorldDel("DckBnQs6gdpuZD1EK2pr")
@@ -141,8 +139,6 @@ export default function EEAdd() {
     </>
   );
 }
-
-const screenWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   input: {

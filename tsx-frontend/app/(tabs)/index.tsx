@@ -1,4 +1,4 @@
-import Shell from '@/components/core/Shell'
+// import Shell from '@/components/core/Shell'
 import AsgmtInstr from '@/components/core/AsgmtInstr'
 
 const HomeScreen = () => {

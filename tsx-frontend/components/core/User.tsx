@@ -26,13 +26,13 @@ export const getNotSession = async (key: string) => {
   }
 };
 
-const rmvNotSession = async (key: string) => {
-  try {
-    await AsyncStorage.removeItem(key)
-  } catch (e) {
-    console.error('Error remove data:', e);
-  }
-};
+// const rmvNotSession = async (key: string) => {
+//   try {
+//     await AsyncStorage.removeItem(key)
+//   } catch (e) {
+//     console.error('Error remove data:', e);
+//   }
+// };
 
 // const [createUserWithEmailAndPassword, user, loading, createError] = useCreateUserWithEmailAndPassword(auth)
 

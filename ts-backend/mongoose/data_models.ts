@@ -1,7 +1,7 @@
 export {}
 // Mongoose user model
 // backend/models/User.js
-import mongoose, { Schema, model, connect, ObjectId } from "mongoose";
+import { Schema, model, connect, ObjectId } from "mongoose";
 
 // 1. Create an interface representing a document in MongoDB.
 interface IUser {
